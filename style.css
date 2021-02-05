@@ -1,0 +1,293 @@
+/*
+    Theme Name: GGG
+    Theme URI: https://with3g.com
+    Author: Guillermo Granados Gómez
+    Author URI: https://with3g.com
+    Description: Tema principal del sitio with3g.com
+    Version: 1.0
+    License: GNU General Public License v2 or later
+    License URI: http://www.gnu.org/licenses/gpl-2.0.html
+    Tags: ggg, with3g, tema with3g, desarrollo wordpress
+    Text Domain: with3g
+
+*/
+
+/* BASE */
+
+body{
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('/ggg/wp-content/themes/with3g/img/vector-fondo.jpg');
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+header{
+    width: 100%;
+    height: 120px;
+    background: #080708;
+    display: flex;
+    position: relative;
+    z-index: 2;
+}
+
+    header img{
+        padding-left: 15px;
+    }
+
+    header h1 {
+        color: #FFFBFE;
+        text-shadow: 4px 4px 6px #0000FF;
+        font-size: 65px;
+        padding-left: 20px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+
+    header h2 {
+        color: #FFFBFE;
+        text-shadow: 4px 4px 6px #0000FF;
+        font-size: 21px;
+        padding-left: 27px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+nav{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background: #0000FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 5px 10px #080708;
+    z-index: 2;
+}
+
+li{
+    list-style: none;
+}
+
+.menuMob{
+    display: none;
+}
+
+.fa-times{
+    display: none;
+}
+
+    nav a{
+        text-decoration: none;
+        font-weight: bold;
+        color: #FFFBFE;
+        font-size: 20px;
+    }
+
+
+main{
+    position: relative;
+    margin: 0 auto;
+    width: 1280px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    min-height: 100vh;
+    background: #FFFBFE;
+    z-index: 1;
+    box-shadow: 0px 0px 10px #080708;
+}
+
+footer{
+    position: relative;
+    margin: 0 auto;
+    width: 1280px;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #080708;
+    margin-bottom: 30px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0px 0px 10px #080708;
+}
+    footer h3{
+        color: #008DD5;
+        font-weight: bolder;
+        font-size: 24px;
+        position: absolute;
+    }
+
+    footer div{
+        width: 100%;
+        height: 475px;
+        padding-top: 15px;
+        display: flex;
+        justify-content: center;
+    }
+        .licencia{
+            width: 1280px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            height: 25px;
+            color: #FFFBFE;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+    footer a{
+        text-decoration: none;
+        color:#FFFBFE;
+        display: flex;
+        justify-content: center;
+        margin-top: 80px;
+    }
+
+/* Interfaz */
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.col{
+    display: flex;
+    flex-direction: col;
+}
+
+.navShadow{
+    text-shadow: 2px 2px 2px #008DD5;
+}
+
+.current_page_item a{
+    color: #008DD5;
+    text-shadow: 0px 0px 3px #080708;
+}
+
+/* RESPONSIVE TABLET */
+@media screen and (max-width: 1280px){
+
+    header{
+        height: 100px;
+    } 
+
+    header h1 {
+        font-size: 4vw;
+        padding-left: 20px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+
+    header h2 {
+        font-size: 21px;
+    }
+
+    main, footer, .licencia{
+        width: 100%;
+    }
+}
+
+/* RESPONSIVE MOBILE */
+@media screen and (max-width: 440px){
+    header{
+        flex-direction: column;
+    }
+
+    header div, header a{
+        text-align: center;
+        width: 100%;
+    }
+
+    header img{
+        height: 30px;
+    }
+
+    header h1 {
+        font-size: 7vw;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    header h2 {
+        font-size: 4vw;
+        text-align: center;
+        padding-left: 0px;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        transform: translateX(-100vw);
+        box-shadow: none;
+        align-items: flex-start;
+        padding-top: 10vh;
+    }
+        nav a{
+            font-size: 5vh;
+            padding-top: 5vw;
+        }
+
+    .menuMob {
+        display: block;
+        position: fixed;
+        z-index: 3;
+        padding: 2vh;
+        font-size: 3vh;
+        background: #0000FF;
+        color: #FFFBFE;
+        box-shadow: 0px 1px 2px #080708;
+    }
+
+    .openMenu {
+        transform: translateX(0);
+        transition: 0.5s;
+    }
+
+    .menuRight{
+        transform: translateX(100vw);
+        transition: 0.5s;
+    }
+
+    .closeMenu {
+        transform: translateX(-100vw);
+        transition: 0.5s;
+    }
+
+    .closeMenuRight{
+        transform: translateX(0);
+        transition: 0.5s;
+    }
+
+    .fa-times {
+        display: block;
+        position: fixed;
+        z-index: 3;
+        top: 10px;
+        right: 12px;
+        font-size: 4vh;
+        color: #FFFBFE;
+        text-shadow: 0px 1px 2px #080708;
+    }
+
+    main, footer, .licencia{
+        width: 100%;
+    }
+
+    footer{
+        min-height: 0px;
+    }
+
+    footer div{
+        min-height: 100px;
+    }
+
+    .row{
+        flex-direction: column;
+    }
+    
+}
