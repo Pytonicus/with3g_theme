@@ -19,4 +19,10 @@ cerrar.addEventListener('click', ()=>{
     }, 500);
 });
 
+// Placeholders en formulario de comentarios:
+document.getElementById('comment').setAttribute('placeholder', 'Escribe aquí tu comentario');
+document.getElementById('author').setAttribute('placeholder', 'Nombre *');
+document.getElementById('email').setAttribute('placeholder', 'Email *');
+document.getElementById('url').setAttribute('placeholder', 'Web');
+
 

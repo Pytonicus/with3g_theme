@@ -161,7 +161,7 @@ footer{
 
     footer div{
         width: 100%;
-        height: 475px;
+        /*height: 425px;*/
         display: flex;
         justify-content: center;
     }
@@ -206,6 +206,8 @@ footer{
         color: #FFFBFE;
         margin: 0 auto;
         text-align: center;
+        position: absolute;
+        bottom: 20px;
     }
 
 /* Interfaz */
@@ -391,7 +393,7 @@ footer{
         flex-direction: row;
     }
         .novedadesCardImagen{
-            min-width: 250px;
+            width: 250px;
             height: 250px;
             background: #363732;
             margin: 20px;
@@ -436,3 +438,100 @@ footer{
             color: #0000FF;
             padding: 0px 10px;
         }
+
+/* ==== Comentarios ==== */
+
+
+        div#comments {
+            width: 90%;
+        }
+
+        .comment-body{
+            margin: 40px 0px;
+        }
+
+            .comment-body a, .pagination a, .comment-form a{
+                text-decoration: none;
+                color: #0000FF;
+            }
+
+            .comments-area h3{
+                font-size: 24px;
+            }
+
+            .comment-author.vcard img {
+                margin: 5px 12px;
+            }
+            
+            label{
+                display: none;
+            }
+
+            .comment-form-cookies-consent label{
+                display: block;
+            }
+
+            textarea#comment, input{
+                width: 100%;
+                border: 0;
+                background:#008DD5;
+                color: #080708;
+                box-shadow: 2px 2px 2px #363732;
+                padding: 10px;
+            }
+            textarea#comment::placeholder, input::placeholder{
+                color: #FFFBFE;
+            }
+            textarea#comment:focus, input:focus{
+                outline: none;
+                caret-color: #FFFBFE;
+            }
+            .wp-comment-cookies-consent{
+                box-shadow: none;
+            }
+            input[type="checkbox"] {
+                box-shadow: none;
+                width: 20px;
+                height: 20px;
+                box-shadow: 2px 2px 2px #363732;
+            }
+            input[type="checkbox"]:checked{
+                background: #008DD5;
+            }
+            input[type="submit"]{
+                cursor: pointer;
+            }
+
+/* RESPONSIVE TABLET */
+@media screen and (max-width: 1280px){
+    .novedadesCard{
+        width: 96%;
+    }
+    article{
+        width: 100%;
+    }
+}
+
+/* RESPONSIVE MOBILE */
+@media screen and (max-width: 440px){
+    .novedadesCardContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .paginador{
+        flex-direction: row;
+    }
+
+    textarea#comment, input {
+        width: 95%;
+    }
+
+    footer {
+        display: flex;
+        justify-content: flex-start;
+        min-height: 700px;
+    }
+
+    
+}
