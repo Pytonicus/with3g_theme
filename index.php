@@ -1,25 +1,43 @@
 <?php get_header(); ?>
 
 <main>
+    <h3>NOVEDADES</h3>
     <?php 
-        // recorremos con un bucle la página:
         while(have_posts()): the_post();
     ?>
-    <!-- Con esta función imprimimos el título de cada página: -->
-    <h1><?php the_title(); ?></h1>
-    <!-- Y con esta función cargamos el contenido de la página: -->
-    <?php the_content(); ?>
+        <div class="novedadesCard">
 
-    <!-- podemos mostrar el autor: -->
-    Escrito por: <?php the_author(); ?>
-
-    <!-- y la fecha: -->
-    Fecha: <?php the_date(); ?>
+            <a href="<?php the_permalink(); ?>">
+                <div class="novedadesCardTitle">
+                    <h4><?php the_title(); ?></h4>
+                </div>
+                <div class="novedadesCardContent">
+                    <div class="novedadesCardImagen">
+                    <?php
+                        if(has_post_thumbnail()): 
+                            the_post_thumbnail('novedad');
+                        else:
+                            echo "<img src='" . get_template_directory_uri() . "/img/ggg.png' alt='sin imagen' style='width: 250px; padding-top: 75px;'>";
+                        endif;
+                    ?>
+                    </div>
+                    <div class="novedadesCardText">
+                        <?php the_excerpt(); //the_content();  ?>
+                    </div>
+                </div>
+                <div class="novedadesCardDate">
+                    <small><?php the_time(get_option('date_format')); ?></small>
+                </div>
+            </a>    
+        </div>
 
     <?php
         // cerramos el bucle:
         endwhile;
     ?>
+    <div class="paginador row">
+        <?php echo paginate_links(); ?>
+    </div>
 </main>
 
 <?php get_footer(); ?>

@@ -12,17 +12,26 @@
 
 */
 
-/* BASE */
+/* ===== BASE ===== */
 
 body{
     margin: 0 auto;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Merriweather', serif;
     background-color: #363732;
-    background-image: url('/wp-content/themes/with3g/img/vector-fondo.jpg');
+    background-image: url('/ggg/wp-content/themes/with3g/img/vector-fondo.jpg');
     background-position: center; 
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0 auto;
+    color: #080708;
+}
+
+h1, h2, h3, h4, h5, h6, a, span{
+    font-family: 'Lato', sans-serif;
+}
+
+p{
+    font-size: 18px;
 }
 
 header{
@@ -68,6 +77,11 @@ nav{
     z-index: 2;
 }
 
+ul{
+    padding: 0px;
+    margin: 0px;
+}
+
 li{
     list-style: none;
 }
@@ -88,18 +102,39 @@ li{
     }
 
 
-main{
+main, article{
     position: relative;
     margin: 0 auto;
     width: 1280px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items:center;
+    flex-direction: column;
     min-height: 100vh;
-    background: #FFFBFE;
+    background: RGBA(8,7,8, 0.8);
     z-index: 1;
     box-shadow: 0px 0px 10px #080708;
 }
+
+main{
+    min-height: 0px;
+}
+
+    main h3{
+        color: #0000FF;
+        text-shadow: 2px 2px 3px #008DD5;
+        font-size: 30px;
+    }
+
+article{
+    background:#FFFBFE;
+}
+    article h3{
+        margin-top: 50px;
+        font-size: 38px;
+        color: #363732;
+        text-shadow: 2px 2px 3px #008DD5;
+    }
 
 footer{
     position: relative;
@@ -117,6 +152,7 @@ footer{
     box-shadow: 0px 0px 10px #080708;
 }
     footer h3{
+        padding-top: 15px;
         color: #008DD5;
         font-weight: bolder;
         font-size: 24px;
@@ -126,26 +162,50 @@ footer{
     footer div{
         width: 100%;
         height: 475px;
-        padding-top: 15px;
         display: flex;
         justify-content: center;
     }
-        .licencia{
-            width: 1280px;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            height: 25px;
-            color: #FFFBFE;
-            margin: 0 auto;
-            text-align: center;
-        }
 
-    footer a{
+    .footerLinks{
         text-decoration: none;
         color:#FFFBFE;
+        text-shadow: 2px 2px 2px #008DD5;
         display: flex;
         justify-content: center;
         margin-top: 80px;
+    }
+        .footerLinks ul{
+            padding-top: 15px;
+        }
+            .footerLinks ul li {
+                padding-top: 15px;
+            }
+                .footerLinks ul li a{
+                    font-size: 20px;
+                    text-decoration: none;
+                    color: #FFFBFE;
+                    text-shadow: 2px 2px 2px #008DD5;
+                }
+
+    .widgettitle{
+        display: none;
+    }
+
+    .social i{
+        padding: 20px;
+        font-size: 40px;
+        color: #FFFBFE;
+        text-shadow: 2px 2px 2px #008DD5;
+    }
+
+    .licencia{
+        width: 1280px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        height: 25px;
+        color: #FFFBFE;
+        margin: 0 auto;
+        text-align: center;
     }
 
 /* Interfaz */
@@ -290,5 +350,89 @@ footer{
     .row{
         flex-direction: column;
     }
+
     
 }
+
+/* ===== NOVEDADES ===== */
+
+.novedadesCard{
+    width: 80%;
+    background: #FFFBFE;
+    box-shadow: 2px 2px 3px #0000FF;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-bottom: 25px;
+}
+    .novedadesCard a{
+        text-decoration: none;
+
+    }
+        .novedadesCard a:visited{
+            color: #080708;
+        }
+
+    .novedadesCardTitle{
+        width: 100%;
+        height: 35px;
+        background: #0000FF;
+    }
+        .novedadesCardTitle h4{
+            margin: 0px;
+            text-align: center;
+            color: #FFFBFE;
+            font-size: 18px;
+            padding-top: 8px;
+        }
+    .novedadesCardContent{
+        display: flex;
+        flex-direction: row;
+    }
+        .novedadesCardImagen{
+            min-width: 250px;
+            height: 250px;
+            background: #363732;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 15px 15px 2px #008DD5;
+            overflow: hidden;
+        }
+    
+        .novedadesCardText {
+            padding: 30px 50px;
+            color: #080708;
+        }
+
+        .novedadesCardDate{
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+        }
+        .novedadesCardDate small{
+            background: #0000FF;
+            padding: 8px;
+            color: #FFFBFE;
+        }
+
+    .paginador{
+        margin: 30px;
+        margin-bottom: 40px;
+        background: #FFFBFE;
+        padding: 14px;
+        border-radius: 3px;
+        box-shadow: 2px 2px 3px #0000FF;
+    }
+        .paginador a{
+            text-decoration: none;
+            font-size: 18px;
+            padding: 0px 10px;
+            color: #080708;
+        }
+
+        span.page-numbers.current {
+            font-size: 18px;
+            color: #0000FF;
+            padding: 0px 10px;
+        }
