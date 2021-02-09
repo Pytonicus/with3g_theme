@@ -405,6 +405,7 @@ footer{
         .novedadesCardText {
             padding: 30px 50px;
             color: #080708;
+            width: 40vw;
         }
 
         .novedadesCardDate{
